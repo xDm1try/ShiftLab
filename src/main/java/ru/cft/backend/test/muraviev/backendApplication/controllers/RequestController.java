@@ -1,9 +1,6 @@
 package ru.cft.backend.test.muraviev.backendApplication.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.cft.backend.test.muraviev.backendApplication.intervals.Interval;
 
 @RestController
@@ -11,7 +8,19 @@ import ru.cft.backend.test.muraviev.backendApplication.intervals.Interval;
 public class RequestController {
 
   @GetMapping("/min")
-  public String getMinimal(@RequestParam("type") String type, ){
+  public String getMinimal(@RequestParam("kind") String kind){
+  return "";
+  }
 
+  @PostMapping("/merge")
+  public void postIntervals(@RequestParam("kind") String kind, @RequestBody String data){
+    switch (kind){
+      case "digit" -> {
+
+      }
+      case "letter" -> {
+
+      }
+    }
   }
 }
