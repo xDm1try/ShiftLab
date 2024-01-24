@@ -1,10 +1,8 @@
 package ru.cft.backend.test.muraviev.backendApplication.controllers;
 
 import org.apache.tomcat.util.json.ParseException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.cft.backend.test.muraviev.backendApplication.intervals.DigitsInterval;
-import ru.cft.backend.test.muraviev.backendApplication.intervals.Interval;
 import ru.cft.backend.test.muraviev.backendApplication.intervals.LettersInterval;
 import ru.cft.backend.test.muraviev.backendApplication.services.DigitsIntervalService;
 import ru.cft.backend.test.muraviev.backendApplication.services.IntervalsService;
