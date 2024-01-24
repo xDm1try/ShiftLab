@@ -7,6 +7,8 @@ import ru.cft.backend.test.muraviev.backendApplication.intervals.LettersInterval
 import ru.cft.backend.test.muraviev.backendApplication.repositories.DigitsIntervalRepository;
 import ru.cft.backend.test.muraviev.backendApplication.repositories.LettersIntervalRepository;
 
+import java.util.List;
+
 
 public class IntervalsService {
   private DigitsIntervalService digitsIntervalService;
@@ -44,11 +46,12 @@ public class IntervalsService {
     }
   }
 
-  public DigitsInterval getMinimalDigitsInterval() {
-    return digitsIntervalService.getMinimalDigitsInterval();
+  public List<DigitsInterval> getMinimalDigitsInterval() {
+    List<DigitsInterval> response = digitsIntervalService.getMinimalDigitsInterval();
+    return response;
   }
 
-  public LettersInterval getMinimalLettersInterval() {
+  public List<LettersInterval> getMinimalLettersInterval() {
     return lettersIntervalService.getMinimalLettersInterval();
   }
 }

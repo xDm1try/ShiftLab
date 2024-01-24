@@ -13,6 +13,7 @@ import ru.cft.backend.test.muraviev.backendApplication.services.MergeIntervals;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/intervals")
@@ -29,13 +30,22 @@ public class RequestController {
   public String getMinimal(@RequestParam("kind") String kind) {
     if (kind.equals("digits")) {
       IntervalsService intervalsService = new IntervalsService(digitsIntervalService);
-      return intervalsService.getMinimalDigitsInterval().toString();
+      List<DigitsInterval> response = intervalsService.getMinimalDigitsInterval();
+      if (response.isEmpty()){
+        return "";
+      }else{
+        return response.get(0).toString();
+      }
     } else if (kind.equals("letters")) {
       IntervalsService intervalsService = new IntervalsService(lettersIntervalService);
-      return intervalsService.getMinimalLettersInterval().toString();
-    } else {
-      return "";
+      List<LettersInterval> response = intervalsService.getMinimalLettersInterval();
+      if (response.isEmpty()){
+        return "";
+      }else{
+        return response.get(0).toString();
+      }
     }
+    return "";
   }
 
   @PostMapping("/merge")

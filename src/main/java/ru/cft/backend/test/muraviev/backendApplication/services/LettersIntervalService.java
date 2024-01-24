@@ -6,6 +6,8 @@ import ru.cft.backend.test.muraviev.backendApplication.intervals.DigitsInterval;
 import ru.cft.backend.test.muraviev.backendApplication.intervals.LettersInterval;
 import ru.cft.backend.test.muraviev.backendApplication.repositories.LettersIntervalRepository;
 
+import java.util.List;
+
 @Service
 public class LettersIntervalService {
   private LettersIntervalRepository lettersIntervalRepository;
@@ -17,7 +19,7 @@ public class LettersIntervalService {
   public void save(LettersIntervalEntity lettersIntervalEntity) {
     lettersIntervalRepository.save(lettersIntervalEntity);
   }
-  public LettersInterval getMinimalLettersInterval(){
+  public List<LettersInterval> getMinimalLettersInterval(){
     return lettersIntervalRepository.getMinimalInterval();
   }
 }

@@ -7,10 +7,11 @@ import ru.cft.backend.test.muraviev.backendApplication.intervals.LettersInterval
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
-public class LettersIntervalRepository implements IntervalRepository {
+public class LettersIntervalRepository {
   private JdbcTemplate jdbcTemplate;
   private AtomicLong atomicLong = new AtomicLong(0);
 
@@ -26,10 +27,12 @@ public class LettersIntervalRepository implements IntervalRepository {
         newInterval.getEnd());
   }
 
-  @Override
-  public LettersInterval getMinimalInterval() {
-    return (LettersInterval) jdbcTemplate.query(
-        "select START_LETTERS, END_LETTERS from LETTERS_INTERVALS",
+
+  public List<LettersInterval> getMinimalInterval() {
+    return jdbcTemplate.query(
+        "select START_LETTERS, END_LETTERS from LETTERS_INTERVALS\n" +
+            "ORDER BY START_LETTERS ASC, END_LETTERS ASC\n" +
+            "LIMIT 1",
         this::mapRowToIntervals);
   }
 

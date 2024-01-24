@@ -5,6 +5,8 @@ import ru.cft.backend.test.muraviev.backendApplication.entities.DigitsIntervalEn
 import ru.cft.backend.test.muraviev.backendApplication.intervals.DigitsInterval;
 import ru.cft.backend.test.muraviev.backendApplication.repositories.DigitsIntervalRepository;
 
+import java.util.List;
+
 @Service
 public class DigitsIntervalService {
   private DigitsIntervalRepository digitsIntervalRepository;
@@ -16,7 +18,7 @@ public class DigitsIntervalService {
   public void save(DigitsIntervalEntity digitsIntervalEntity) {
     digitsIntervalRepository.save(digitsIntervalEntity);
   }
-  public DigitsInterval getMinimalDigitsInterval(){
+  public List<DigitsInterval> getMinimalDigitsInterval(){
     return digitsIntervalRepository.getMinimalInterval();
   }
 }

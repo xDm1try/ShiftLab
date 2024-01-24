@@ -8,10 +8,11 @@ import ru.cft.backend.test.muraviev.backendApplication.intervals.Interval;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
-public class DigitsIntervalRepository implements IntervalRepository {
+public class DigitsIntervalRepository {
   private JdbcTemplate jdbcTemplate;
   private AtomicLong atomicLong = new AtomicLong(0);
 
@@ -27,11 +28,14 @@ public class DigitsIntervalRepository implements IntervalRepository {
         newInterval.getEnd());
   }
 
-  @Override
-  public DigitsInterval getMinimalInterval() {
-    return (DigitsInterval) jdbcTemplate.query(
-        "select START_DIGITS, END_DIGITS from DIGITS_INTERVALS",
+
+  public List<DigitsInterval> getMinimalInterval() {
+    List<DigitsInterval> intervalsList = jdbcTemplate.query(
+        "select START_DIGITS, END_DIGITS from DIGITS_INTERVALS\n" +
+            "ORDER BY START_DIGITS ASC, END_DIGITS ASC\n" +
+            "LIMIT 1",
         this::mapRowToIntervals);
+    return intervalsList;
   }
 
   private DigitsInterval mapRowToIntervals(ResultSet resultSet, int i) throws SQLException {
