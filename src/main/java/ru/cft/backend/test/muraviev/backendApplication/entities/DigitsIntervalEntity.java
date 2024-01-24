@@ -2,7 +2,6 @@ package ru.cft.backend.test.muraviev.backendApplication.entities;
 
 import jakarta.persistence.*;
 
-import javax.naming.Name;
 
 @Entity
 @Table(name = "DIGITS_INTERVALS")

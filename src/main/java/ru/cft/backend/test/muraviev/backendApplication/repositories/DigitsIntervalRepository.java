@@ -4,7 +4,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ru.cft.backend.test.muraviev.backendApplication.entities.DigitsIntervalEntity;
 import ru.cft.backend.test.muraviev.backendApplication.intervals.DigitsInterval;
-import ru.cft.backend.test.muraviev.backendApplication.intervals.Interval;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

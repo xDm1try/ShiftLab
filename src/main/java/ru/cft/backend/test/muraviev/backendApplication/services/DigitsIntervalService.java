@@ -18,7 +18,8 @@ public class DigitsIntervalService {
   public void save(DigitsIntervalEntity digitsIntervalEntity) {
     digitsIntervalRepository.save(digitsIntervalEntity);
   }
-  public List<DigitsInterval> getMinimalDigitsInterval(){
+
+  public List<DigitsInterval> getMinimalDigitsInterval() {
     return digitsIntervalRepository.getMinimalInterval();
   }
 }

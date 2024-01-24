@@ -4,8 +4,6 @@ import ru.cft.backend.test.muraviev.backendApplication.entities.DigitsIntervalEn
 import ru.cft.backend.test.muraviev.backendApplication.entities.LettersIntervalEntity;
 import ru.cft.backend.test.muraviev.backendApplication.intervals.DigitsInterval;
 import ru.cft.backend.test.muraviev.backendApplication.intervals.LettersInterval;
-import ru.cft.backend.test.muraviev.backendApplication.repositories.DigitsIntervalRepository;
-import ru.cft.backend.test.muraviev.backendApplication.repositories.LettersIntervalRepository;
 
 import java.util.List;
 

@@ -11,7 +11,6 @@ import ru.cft.backend.test.muraviev.backendApplication.services.IntervalsService
 import ru.cft.backend.test.muraviev.backendApplication.services.LettersIntervalService;
 import ru.cft.backend.test.muraviev.backendApplication.services.MergeIntervals;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,17 +30,17 @@ public class RequestController {
     if (kind.equals("digits")) {
       IntervalsService intervalsService = new IntervalsService(digitsIntervalService);
       List<DigitsInterval> response = intervalsService.getMinimalDigitsInterval();
-      if (response.isEmpty()){
+      if (response.isEmpty()) {
         return "";
-      }else{
+      } else {
         return response.get(0).toString();
       }
     } else if (kind.equals("letters")) {
       IntervalsService intervalsService = new IntervalsService(lettersIntervalService);
       List<LettersInterval> response = intervalsService.getMinimalLettersInterval();
-      if (response.isEmpty()){
+      if (response.isEmpty()) {
         return "";
-      }else{
+      } else {
         return response.get(0).toString();
       }
     }

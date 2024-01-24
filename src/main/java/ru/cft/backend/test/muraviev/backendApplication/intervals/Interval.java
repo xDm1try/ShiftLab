@@ -17,7 +17,7 @@ public abstract class Interval<T> {
     return this.end;
   }
 
-  public String toString(){
+  public String toString() {
     return "[" + this.start + "," + this.end + "]";
   }
 
